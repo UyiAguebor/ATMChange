@@ -6,22 +6,30 @@ import java.util.Scanner;
 public class ATM
 {
     public static void main( String[] args ) {
-        int fifty = 12;
-        int twenty = 20;
-        int ten = 50;
-        int five = 100;
-        int two = 250;
-        int one = 500;
 
         Scanner value = new Scanner(System.in);
 
         System.out.println("Please enter an amount:");
         int amount  = value.nextInt();
 
+        withdrawValue(amount);
         getChange(amount);
         value.close();
 
+    }
 
+    public static void withdrawValue(int amount){
+        int[] notes = {50, 20, 10, 5, 2, 1};
+        int[] times = new int[6];
+
+        for(int i = 0;i < notes.length;i++){
+            times[i] = amount/notes[i];
+            amount -= notes[i]*times[i];
+        }
+
+        for(int j = 0;j < times.length;j++){
+            System.out.println(times[j]+ " " + "x" + " " + notes[j]);
+        }
     }
 
     public static String getChange(int amount){
