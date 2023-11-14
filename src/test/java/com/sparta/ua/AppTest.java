@@ -27,6 +27,8 @@ public class AppTest {
             "Amount of £5 notes: 99\n" +
             "Amount of £2 notes: 248\n" +
             "Amount of £1 notes: 500";
+
+
     @Test
     @DisplayName("Test values")
     public void Testing150() {

@@ -21,6 +21,7 @@ public class ATM
     public static void withdrawValue(int amount){
         int[] notes = {50, 20, 10, 5, 2, 1};
         int[] times = new int[6];
+        int[] amountOfNotes = {12, 20, 50, 100, 250, 500};
 
         for(int i = 0;i < notes.length;i++){
             times[i] = amount/notes[i];
@@ -30,6 +31,15 @@ public class ATM
         for(int j = 0;j < times.length;j++){
             System.out.println(times[j]+ " " + "x" + " " + notes[j]);
         }
+        System.out.println("------------------------------------------");
+
+        System.out.println("Value || Quantity of units");
+        for(int k = 0;k < notes.length;k++){
+            amountOfNotes[k] -= times[k];
+            System.out.println(notes[k] + "  " + amountOfNotes[k]);
+        }
+
+
     }
 
     public static String getChange(int amount){
