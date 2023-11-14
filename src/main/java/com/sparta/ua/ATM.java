@@ -22,6 +22,7 @@ public class ATM
         int[] notes = {50, 20, 10, 5, 2, 1};
         int[] times = new int[6];
         int[] amountOfNotes = {12, 20, 50, 100, 250, 500};
+        System.out.println("Customer withdraws £" + amount);
 
         for(int i = 0;i < notes.length;i++){
             times[i] = amount/notes[i];
